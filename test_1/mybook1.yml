@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: root
+  gather_facts: no
+  tasks:
+    - name: command ls
+      command: ls
+      register: result
+    - name: display result
+      debug: msg={{ result }}
